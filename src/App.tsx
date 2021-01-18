@@ -1,11 +1,20 @@
 import React from "react"
+import Time from "components/Time"
 
 function App() {
   return (
     <div>
-      <h1>Hello world</h1>
+      <Time />
     </div>
   )
 }
+
+/**
+ <BackgroundImage>
+    <Quote />
+    <Time />
+  </BackgroundImage>
+    <TimeExpand />
+ */
 
 export default App
