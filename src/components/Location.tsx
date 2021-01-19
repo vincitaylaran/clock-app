@@ -6,12 +6,14 @@ interface Props {
 }
 
 function Location({ city, regionCode }: Props) {
-  return (
-    <div>
+  return city && regionCode ? (
+    <div className="time__location">
       <h3>
         In {city}, {regionCode}
       </h3>
     </div>
+  ) : (
+    <div className="time__no-location" />
   )
 }
 

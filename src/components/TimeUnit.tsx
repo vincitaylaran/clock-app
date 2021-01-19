@@ -6,12 +6,14 @@ interface Props {
 }
 
 function TimeUnit({ time, abbreviation }: Props) {
-  return (
-    <div>
+  return time && abbreviation ? (
+    <div className="time__time-unit">
       <h1>
         {time} {abbreviation}
       </h1>
     </div>
+  ) : (
+    <div className="time__no-time-unit" />
   )
 }
 

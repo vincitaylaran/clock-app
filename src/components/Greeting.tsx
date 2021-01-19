@@ -19,7 +19,11 @@ function Greeting({ time }: Props) {
     return "evening"
   }
 
-  return <div>Good {getTimeOfDay()}, it's currently</div>
+  return time ? (
+    <div className="time__greeting">Good {getTimeOfDay()}, it's currently</div>
+  ) : (
+    <div className="time__no-greeting" />
+  )
 }
 
 export default Greeting

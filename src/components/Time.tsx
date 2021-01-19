@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react"
+
 import dayjs from "dayjs"
+
+import "styles/_time.scss"
+
 import Greeting from "components/Greeting"
 import TimeUnit from "components/TimeUnit"
 import Location from "components/Location"
+import ExpandButton from "components/ExpandButton"
 
 function Time() {
   const [time, setTime] = useState<string | undefined>()
@@ -43,10 +48,11 @@ function Time() {
   }, [])
 
   return (
-    <div>
+    <div className="time">
       <Greeting time={time} />
       <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
       <Location city={city} regionCode={regionCode} />
+      <ExpandButton />
     </div>
   )
 }

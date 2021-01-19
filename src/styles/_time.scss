@@ -1,0 +1,24 @@
+.time {
+  &__time-unit {
+    color: var(--on-hover);
+  }
+
+  &__no-time-unit {
+  }
+
+  &__location {
+  }
+
+  &__no-location {
+  }
+
+  &__greeting {
+  }
+
+  &__no-greeting {
+  }
+
+  &__more-button {
+    width: 100px;
+  }
+}
