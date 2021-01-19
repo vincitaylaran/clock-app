@@ -1,21 +1,28 @@
 import React from "react"
-import Time from "components/Time"
+
+import QuoteAndTime from "components/QuoteAndTime"
+import Header from "components/Header"
+import ExpandButton from "components/ExpandButton"
+
 import "styles/_base.scss"
 
 function App() {
   return (
     <div className="app">
-      <Time />
+      <Header>
+        <QuoteAndTime />
+        <ExpandButton />
+      </Header>
     </div>
   )
 }
 
 /**
- <BackgroundImage>
-    <Quote />
-    <Time />
-  </BackgroundImage>
-    <TimeExpand />
+ <Header>
+    <QuoteAndTime />
+    <ExpandButton />
+  </Header>
+    <MoreInfo />
  */
 
 export default App
