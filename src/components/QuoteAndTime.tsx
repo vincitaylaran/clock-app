@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react"
 
 import dayjs from "dayjs"
 
-import "styles/_time.scss"
+import "styles/_quote-and-time.scss"
 
 import Greeting from "components/Greeting"
 import TimeUnit from "components/TimeUnit"
 import Location from "components/Location"
-import ExpandButton from "components/ExpandButton"
+import Quote from "components/Quote"
 
 function Time() {
   const [time, setTime] = useState<string | undefined>()
@@ -48,15 +48,25 @@ function Time() {
   }, [])
 
   return (
-    <div className="time">
-      <Greeting time={time} />
-      <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
-      <Location city={city} regionCode={regionCode} />
-      <ExpandButton />
+    <div className="main">
+      <Quote />
+      <div className="main__time">
+        <Greeting time={time} />
+        <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
+        <Location city={city} regionCode={regionCode} />
+      </div>
     </div>
   )
 }
 
+;<div className="main">
+  <div>
+    <h2>Quote Area</h2>
+  </div>
+  <div>
+    <h2>Time, Location, and Greeting Area</h2>
+  </div>
+</div>
 export default Time
 
 /**
