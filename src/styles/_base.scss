@@ -11,6 +11,12 @@
   --green: #999999;
 
   --main-left-padding: 200px;
+
+  // Screen width breakpoints
+  --desktop-breakpoint: 1400px;
+  --laptop-breakpoint: 1100px;
+  --tablet-breakpoint: 756px;
+  --mobile-breakpoint: 450px;
 }
 
 html {
