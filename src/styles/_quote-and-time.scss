@@ -1,35 +1,54 @@
 .main {
   display: flex;
-  width: 50%;
   flex-direction: column;
-}
 
-.time {
-  background-color: red;
+  // First row is the quote
+  &__quote {
+    background-color: lime;
+  }
 
-  &__time-unit {
-    background-color: blue;
+  // Second row is for the greeting and time
+  &__time {
+    background-color: red;
+
+    &__time-unit {
+      background-color: blue;
+      display: flex;
+
+      h3 {
+        font-weight: var(--regular);
+        position: relative;
+        top: 17%;
+        left: 2%;
+      }
+    }
+
+    &__no-time-unit {
+    }
+
+    &__location {
+      background-color: yellow;
+      // display: flex;
+      width: auto;
+      // justify-content: space-between;
+    }
+
+    &__no-location {
+    }
+
+    &__greeting {
+      background-color: green;
+    }
+
+    &__no-greeting {
+    }
+  }
+
+  // Third row is for the location and more button
+  &__location-more-button {
     display: flex;
-  }
-
-  &__no-time-unit {
-  }
-
-  &__location {
     background-color: yellow;
+    width: auto;
+    justify-content: space-between;
   }
-
-  &__no-location {
-  }
-
-  &__greeting {
-    background-color: green;
-  }
-
-  &__no-greeting {
-  }
-}
-
-.button-container {
-  background-color: salmon;
 }

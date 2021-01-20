@@ -8,6 +8,7 @@ import Greeting from "components/Greeting"
 import TimeUnit from "components/TimeUnit"
 import Location from "components/Location"
 import Quote from "components/Quote"
+import ExpandButton from "./ExpandButton"
 
 function Time() {
   const [time, setTime] = useState<string | undefined>()
@@ -49,11 +50,16 @@ function Time() {
 
   return (
     <div className="main">
-      <Quote />
+      <div className="main__quote">
+        <Quote />
+      </div>
       <div className="main__time">
         <Greeting time={time} />
         <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
+      </div>
+      <div className="main__location-more-button">
         <Location city={city} regionCode={regionCode} />
+        <ExpandButton />
       </div>
     </div>
   )

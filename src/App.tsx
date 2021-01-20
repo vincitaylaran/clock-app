@@ -2,7 +2,6 @@ import React from "react"
 
 import QuoteAndTime from "components/QuoteAndTime"
 import Header from "components/Header"
-import ExpandButton from "components/ExpandButton"
 
 import "styles/_base.scss"
 
@@ -11,8 +10,8 @@ function App() {
     <div className="app">
       <Header>
         <QuoteAndTime />
-        <ExpandButton />
       </Header>
+      {/* <MorePanel> */}
     </div>
   )
 }

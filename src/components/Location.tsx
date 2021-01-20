@@ -7,13 +7,11 @@ interface Props {
 
 function Location({ city, regionCode }: Props) {
   return city && regionCode ? (
-    <div className="time__location">
-      <h3>
-        In {city}, {regionCode}
-      </h3>
-    </div>
+    <h3>
+      In {city}, {regionCode}
+    </h3>
   ) : (
-    <div className="time__no-location" />
+    <div className="main__time__no-location" />
   )
 }
 
