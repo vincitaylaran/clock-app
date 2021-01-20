@@ -2,6 +2,9 @@
 
 :root {
   font-family: "Inter", sans-serif;
+  --regular: 400;
+  --bold: 700;
+
   --black-1: #000000;
   --black-2: #303030;
   --white-1: #ffffff;
@@ -21,17 +24,16 @@ body {
 
 h1 {
   // line-height: 200px;
-  letter-spacing: -5px;
+  // letter-spacing: -5px;
   font-size: 200px;
 }
 
 h2 {
   font-size: 56px;
-  background-color: lime;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 28px;
   // line-height: 28px;
   letter-spacing: 4.8px;
   text-transform: uppercase;
