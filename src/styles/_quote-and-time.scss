@@ -1,25 +1,34 @@
 .main {
   display: flex;
   flex-direction: column;
+  color: white;
+  padding: 0 100px;
+  justify-content: center;
 
   // First row is the quote
   &__quote {
     background-color: lime;
+    width: 60%;
+    position: relative;
+    bottom: 15%;
   }
 
   // Second row is for the greeting and time
   &__time {
     background-color: red;
+    position: relative;
 
     &__time-unit {
       background-color: blue;
       display: flex;
+      h1 {
+        background-color: aqua;
+        margin: 0px 0px;
+      }
 
       h3 {
         font-weight: var(--regular);
-        position: relative;
-        top: 17%;
-        left: 2%;
+        background-color: black;
       }
     }
 
@@ -41,6 +50,9 @@
     }
 
     &__no-greeting {
+    }
+
+    &__no-quote-and-author {
     }
   }
 

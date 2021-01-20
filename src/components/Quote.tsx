@@ -1,11 +1,20 @@
-function Quote() {
-  return (
-    <h4>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente placeat
-      praesentium neque! Blanditiis explicabo hic eum illum porro officia
-      accusantium, aliquid, voluptatibus non qui voluptas nesciunt eius modi
-      neque perspiciatis.
-    </h4>
+export interface RandomQuote {
+  content: string | undefined
+  author: string | undefined
+}
+
+interface Props {
+  quote: RandomQuote | undefined
+}
+
+function Quote({ quote }: Props) {
+  return quote ? (
+    <div>
+      <h4>{quote.content}</h4>
+      <h4>{quote.author}</h4>
+    </div>
+  ) : (
+    <div className="main__time__no-quote-and-author" />
   )
 }
 

@@ -7,7 +7,7 @@ import "styles/_quote-and-time.scss"
 import Greeting from "components/Greeting"
 import TimeUnit from "components/TimeUnit"
 import Location from "components/Location"
-import Quote from "components/Quote"
+import Quote, { RandomQuote } from "components/Quote"
 import ExpandButton from "./ExpandButton"
 
 function Time() {
@@ -17,6 +17,7 @@ function Time() {
   >()
   const [regionCode, setRegionCode] = useState<string | undefined>()
   const [city, setCity] = useState<string | undefined>()
+  const [quote, setQuote] = useState<RandomQuote>()
 
   useEffect(() => {
     const fetchTime = async () => {
@@ -44,6 +45,14 @@ function Time() {
       setRegionCode(region_code)
     }
 
+    const fetchQuote = async () => {
+      const request = await fetch("https://api.quotable.io/random")
+      const response = await request.json()
+      const { content, author } = response
+      setQuote({ content, author })
+    }
+
+    fetchQuote()
     fetchTime()
     fetchCity()
   }, [])
@@ -51,7 +60,7 @@ function Time() {
   return (
     <div className="main">
       <div className="main__quote">
-        <Quote />
+        <Quote quote={quote} />
       </div>
       <div className="main__time">
         <Greeting time={time} />
