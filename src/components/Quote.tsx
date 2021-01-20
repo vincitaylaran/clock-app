@@ -5,16 +5,20 @@ export interface RandomQuote {
 
 interface Props {
   quote: RandomQuote | undefined
+  onNewQuote: () => void
 }
 
-function Quote({ quote }: Props) {
+function Quote({ quote, onNewQuote }: Props) {
   return quote ? (
-    <div>
-      <h4>{quote.content}</h4>
-      <h4>{quote.author}</h4>
+    <div className="main__quote__content-and-author">
+      <div id="quote">
+        <h5 id="content">"{quote.content}"</h5>
+        <button onClick={onNewQuote}>new quote</button>
+      </div>
+      <h4 id="author">{quote.author}</h4>
     </div>
   ) : (
-    <div className="main__time__no-quote-and-author" />
+    <div className="main__quote__no-content-and-author" />
   )
 }
 

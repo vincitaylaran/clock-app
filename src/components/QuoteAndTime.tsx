@@ -19,39 +19,39 @@ function Time() {
   const [city, setCity] = useState<string | undefined>()
   const [quote, setQuote] = useState<RandomQuote>()
 
+  const fetchTime = async () => {
+    const request = await fetch("http://worldtimeapi.org/api/ip")
+    const response = await request.json()
+
+    const {
+      datetime,
+      day_of_week,
+      day_of_year,
+      tiemzone,
+      week_number,
+      abbreviation,
+    } = response
+
+    setTime(dayjs(datetime).format("HH:mm"))
+    setTimezoneAbbreviation(abbreviation)
+  }
+
+  const fetchCity = async () => {
+    const request = await fetch("https://freegeoip.app/json/")
+    const response = await request.json()
+    const { region_code, city } = response
+    setCity(city)
+    setRegionCode(region_code)
+  }
+
+  const fetchQuote = async () => {
+    const request = await fetch("https://api.quotable.io/random")
+    const response = await request.json()
+    const { content, author } = response
+    setQuote({ content, author })
+  }
+
   useEffect(() => {
-    const fetchTime = async () => {
-      const request = await fetch("http://worldtimeapi.org/api/ip")
-      const response = await request.json()
-
-      const {
-        datetime,
-        day_of_week,
-        day_of_year,
-        tiemzone,
-        week_number,
-        abbreviation,
-      } = response
-
-      setTime(dayjs(datetime).format("HH:mm"))
-      setTimezoneAbbreviation(abbreviation)
-    }
-
-    const fetchCity = async () => {
-      const request = await fetch("https://freegeoip.app/json/")
-      const response = await request.json()
-      const { region_code, city } = response
-      setCity(city)
-      setRegionCode(region_code)
-    }
-
-    const fetchQuote = async () => {
-      const request = await fetch("https://api.quotable.io/random")
-      const response = await request.json()
-      const { content, author } = response
-      setQuote({ content, author })
-    }
-
     fetchQuote()
     fetchTime()
     fetchCity()
@@ -60,7 +60,7 @@ function Time() {
   return (
     <div className="main">
       <div className="main__quote">
-        <Quote quote={quote} />
+        <Quote quote={quote} onNewQuote={fetchQuote} />
       </div>
       <div className="main__time">
         <Greeting time={time} />

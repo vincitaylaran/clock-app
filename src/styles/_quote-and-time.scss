@@ -2,15 +2,34 @@
   display: flex;
   flex-direction: column;
   color: white;
-  padding: 0 100px;
+  // padding: 0 100px;
   justify-content: center;
+  min-width: 100%;
 
   // First row is the quote
   &__quote {
-    background-color: lime;
-    width: 60%;
     position: relative;
-    bottom: 15%;
+    bottom: 20%;
+    // left: 10%;
+    padding-left: var(--main-left-padding);
+    max-width: 573px;
+    height: 125px;
+
+    &__content-and-author {
+      #quote {
+        display: flex;
+
+        #content {
+          font-weight: var(--regular);
+          margin-bottom: 0px;
+        }
+
+        button {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
   }
 
   // Second row is for the greeting and time
@@ -21,6 +40,7 @@
     &__time-unit {
       background-color: blue;
       display: flex;
+      padding-left: var(--main-left-padding);
       h1 {
         background-color: aqua;
         margin: 0px 0px;
@@ -29,6 +49,9 @@
       h3 {
         font-weight: var(--regular);
         background-color: black;
+        height: 10%;
+        margin-top: 150px;
+        margin-left: 10px;
       }
     }
 
@@ -39,6 +62,7 @@
       background-color: yellow;
       // display: flex;
       width: auto;
+
       // justify-content: space-between;
     }
 
@@ -47,12 +71,10 @@
 
     &__greeting {
       background-color: green;
+      padding-left: var(--main-left-padding);
     }
 
     &__no-greeting {
-    }
-
-    &__no-quote-and-author {
     }
   }
 
@@ -62,5 +84,6 @@
     background-color: yellow;
     width: auto;
     justify-content: space-between;
+    padding-left: var(--main-left-padding);
   }
 }
