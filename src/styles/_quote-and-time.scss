@@ -30,16 +30,18 @@ $time-location-more-button-relative-position-top: 10%;
         }
       }
     }
+
+    &__no-content-and-author {
+      display: none;
+    }
   }
 
   // Second row is for the greeting and time
   &__time {
     // background-color: red;
     position: relative;
-    top: $time-location-more-button-relative-position-top;
 
     &__time-unit {
-      // background-color: blue;
       display: flex;
       padding-left: var(--main-left-padding);
       h1 {
@@ -61,10 +63,7 @@ $time-location-more-button-relative-position-top: 10%;
 
     &__location {
       // background-color: yellow;
-      // display: flex;
       width: auto;
-
-      // justify-content: space-between;
     }
 
     &__no-location {
@@ -91,6 +90,14 @@ $time-location-more-button-relative-position-top: 10%;
     padding-left: var(--main-left-padding);
     padding-right: 320px;
     position: relative;
-    top: $time-location-more-button-relative-position-top;
   }
+}
+
+// Needed when isMoreClicked prop is true or false in <QuoteAndTime />
+.top-10 {
+  top: $time-location-more-button-relative-position-top;
+}
+
+.bottom-18 {
+  bottom: 18%;
 }

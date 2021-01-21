@@ -65,13 +65,21 @@ function Time({ onMore, isMoreClicked }: Props) {
   return (
     <div className="main">
       <div className="main__quote">
-        <Quote quote={quote} onNewQuote={fetchQuote} />
+        <Quote
+          quote={quote}
+          onNewQuote={fetchQuote}
+          isMoreClicked={isMoreClicked}
+        />
       </div>
-      <div className="main__time">
+      <div className={`main__time ${isMoreClicked ? "" : "top-10"}`}>
         <Greeting time={time} />
         <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
       </div>
-      <div className="main__location-more-button">
+      <div
+        className={`main__location-more-button ${
+          isMoreClicked ? "" : "top-10"
+        }`}
+      >
         <Location city={city} regionCode={regionCode} />
         <ExpandButton onMore={onMore} isMoreClicked={isMoreClicked} />
       </div>
@@ -79,14 +87,6 @@ function Time({ onMore, isMoreClicked }: Props) {
   )
 }
 
-;<div className="main">
-  <div>
-    <h2>Quote Area</h2>
-  </div>
-  <div>
-    <h2>Time, Location, and Greeting Area</h2>
-  </div>
-</div>
 export default Time
 
 /**

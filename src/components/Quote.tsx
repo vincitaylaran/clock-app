@@ -5,11 +5,12 @@ export interface RandomQuote {
 
 interface Props {
   quote: RandomQuote | undefined
+  isMoreClicked: boolean
   onNewQuote: () => void
 }
 
-function Quote({ quote, onNewQuote }: Props) {
-  return quote ? (
+function Quote({ quote, onNewQuote, isMoreClicked }: Props) {
+  return quote && !isMoreClicked ? (
     <div className="main__quote__content-and-author">
       <div id="quote">
         <h5 id="content">"{quote.content}"</h5>
