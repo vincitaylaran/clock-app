@@ -10,7 +10,12 @@ import Location from "components/Location"
 import Quote, { RandomQuote } from "components/Quote"
 import ExpandButton from "./ExpandButton"
 
-function Time() {
+interface Props {
+  onMore: () => void
+  isMoreClicked: boolean
+}
+
+function Time({ onMore, isMoreClicked }: Props) {
   const [time, setTime] = useState<string | undefined>()
   const [timezoneAbbreviation, setTimezoneAbbreviation] = useState<
     string | undefined
@@ -68,7 +73,7 @@ function Time() {
       </div>
       <div className="main__location-more-button">
         <Location city={city} regionCode={regionCode} />
-        <ExpandButton />
+        <ExpandButton onMore={onMore} isMoreClicked={isMoreClicked} />
       </div>
     </div>
   )

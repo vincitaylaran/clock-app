@@ -3,10 +3,15 @@ import "styles/_header.scss"
 
 interface Props {
   children: ReactNode
+  isMoreClicked: boolean
 }
 
-function Header({ children }: Props) {
-  return <div className="header">{children}</div>
+function Header({ children, isMoreClicked }: Props) {
+  return (
+    <div className={`header ${isMoreClicked ? "height-50vh" : "height-100vh"}`}>
+      {children}
+    </div>
+  )
 }
 
 export default Header

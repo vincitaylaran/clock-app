@@ -1,9 +1,22 @@
 import "styles/_expand-button.scss"
 
-function ExpandButton() {
+interface Props {
+  onMore: (wasClicked: boolean) => void
+  isMoreClicked: boolean
+}
+
+function ExpandButton({ onMore, isMoreClicked }: Props) {
+  // const { onMore } = useMoreInfo()
+
+  const handleOnMore = () => {
+    onMore(isMoreClicked ? false : true)
+  }
+
   return (
     <div>
-      <button className="more-button">More</button>
+      <button onClick={handleOnMore} className="more-button">
+        More
+      </button>
     </div>
   )
 }

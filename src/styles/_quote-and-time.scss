@@ -1,8 +1,9 @@
+$time-location-more-button-relative-position-top: 10%;
+
 .main {
   display: flex;
   flex-direction: column;
   color: white;
-  // padding: 0 100px;
   justify-content: center;
   min-width: 100%;
 
@@ -10,7 +11,6 @@
   &__quote {
     position: relative;
     bottom: 20%;
-    // left: 10%;
     padding-left: var(--main-left-padding);
     max-width: 573px;
     height: 125px;
@@ -34,24 +34,25 @@
 
   // Second row is for the greeting and time
   &__time {
-    background-color: red;
+    // background-color: red;
     position: relative;
+    top: $time-location-more-button-relative-position-top;
 
     &__time-unit {
-      background-color: blue;
+      // background-color: blue;
       display: flex;
       padding-left: var(--main-left-padding);
       h1 {
-        background-color: aqua;
+        // background-color: aqua;
         margin: 0px 0px;
       }
 
       h3 {
         font-weight: var(--regular);
-        background-color: black;
+        // background-color: black;
         height: 10%;
-        margin-top: 150px;
-        margin-left: 10px;
+        margin-top: 160px;
+        margin-left: 25px;
       }
     }
 
@@ -59,7 +60,7 @@
     }
 
     &__location {
-      background-color: yellow;
+      // background-color: yellow;
       // display: flex;
       width: auto;
 
@@ -70,8 +71,11 @@
     }
 
     &__greeting {
-      background-color: green;
+      // background-color: green;
       padding-left: var(--main-left-padding);
+      h3 {
+        font-weight: var(--regular);
+      }
     }
 
     &__no-greeting {
@@ -81,9 +85,12 @@
   // Third row is for the location and more button
   &__location-more-button {
     display: flex;
-    background-color: yellow;
+    // background-color: yellow;
     width: auto;
     justify-content: space-between;
     padding-left: var(--main-left-padding);
+    padding-right: 320px;
+    position: relative;
+    top: $time-location-more-button-relative-position-top;
   }
 }

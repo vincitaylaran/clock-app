@@ -14,7 +14,7 @@
 
   // Screen width breakpoints
   --desktop-breakpoint: 1400px;
-  --laptop-breakpoint: 1100px;
+  --laptop-breakpoint: 1000px;
   --tablet-breakpoint: 756px;
   --mobile-breakpoint: 450px;
 }
@@ -50,12 +50,13 @@ h3 {
 h4 {
   font-size: 20px;
   // line-height: 28px;
-  letter-spacing: 4px;
+  letter-spacing: 1.3px;
 }
 
 h5 {
   font-size: 18px;
-  // line-height: 28px;
+  line-height: 28px;
+  // letter-spacing: 1.2px;
 }
 
 h6 {
