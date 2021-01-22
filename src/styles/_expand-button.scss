@@ -1,5 +1,12 @@
+@import "./viewport-breakpoints";
+
 .more-button {
   width: 146px;
   height: 56px;
   border-radius: 25px;
+
+  @media all and (max-width: $breakpoint-mobile) {
+    width: 115px;
+    height: 39px;
+  }
 }
