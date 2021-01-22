@@ -1,9 +1,19 @@
+@import "./viewport-breakpoints";
+
 .header {
-  background-image: url("../assets/desktop/bg-image-daytime.jpg");
+  background-image: url("../assets/tablet/bg-image-daytime.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+
+  @media all and (min-width: $breakpoint-laptop) {
+    background-image: url("../assets/desktop/bg-image-daytime.jpg");
+  }
+
+  @media all and (max-width: $breakpoint-mobile) {
+    background-image: url("../assets/mobile/bg-image-daytime.jpg");
+  }
 }
 
 .height-100vh {
