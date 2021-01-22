@@ -8,7 +8,7 @@ import Greeting from "components/Greeting"
 import TimeUnit from "components/TimeUnit"
 import Location from "components/Location"
 import Quote, { RandomQuote } from "components/Quote"
-import ExpandButton from "./ExpandButton"
+import ExpandButton from "components/ExpandButton"
 
 interface Props {
   onMore: () => void
@@ -71,15 +71,11 @@ function Time({ onMore, isMoreClicked }: Props) {
           isMoreClicked={isMoreClicked}
         />
       </div>
-      <div className={`main__time ${isMoreClicked ? "" : "top-10"}`}>
+      <div className={`main__time`}>
         <Greeting time={time} />
         <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
       </div>
-      <div
-        className={`main__location-more-button ${
-          isMoreClicked ? "" : "top-10"
-        }`}
-      >
+      <div className={`main__location-more-button `}>
         <Location city={city} regionCode={regionCode} />
         <ExpandButton onMore={onMore} isMoreClicked={isMoreClicked} />
       </div>

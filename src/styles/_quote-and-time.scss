@@ -1,32 +1,37 @@
+@import "./viewport-breakpoints";
+
 $time-location-more-button-relative-position-top: 10%;
 
 .main {
   display: flex;
   flex-direction: column;
   color: white;
-  justify-content: center;
   min-width: 100%;
 
   // First row is the quote
   &__quote {
-    position: relative;
-    bottom: 20%;
-    padding-left: var(--main-left-padding);
+    // padding-left: var(--main-left-padding);
     max-width: 573px;
-    height: 125px;
+    // height: 125px;
 
     &__content-and-author {
       #quote {
         display: flex;
-
+        background-color: yellow;
+        justify-content: space-between;
         #content {
           font-weight: var(--regular);
-          margin-bottom: 0px;
+          margin: 0px;
+          background-color: blue;
         }
 
-        button {
-          width: 50px;
-          height: 50px;
+        button.refresh-button {
+          width: 30px;
+          height: 23px;
+          border: none;
+          outline: none;
+          background-color: red;
+          cursor: pointer;
         }
       }
     }
@@ -38,20 +43,15 @@ $time-location-more-button-relative-position-top: 10%;
 
   // Second row is for the greeting and time
   &__time {
-    // background-color: red;
-    position: relative;
-
     &__time-unit {
       display: flex;
-      padding-left: var(--main-left-padding);
+      // padding-left: var(--main-left-padding);
       h1 {
-        // background-color: aqua;
         margin: 0px 0px;
       }
 
       h3 {
         font-weight: var(--regular);
-        // background-color: black;
         height: 10%;
         margin-top: 160px;
         margin-left: 25px;
@@ -62,7 +62,6 @@ $time-location-more-button-relative-position-top: 10%;
     }
 
     &__location {
-      // background-color: yellow;
       width: auto;
     }
 
@@ -70,8 +69,7 @@ $time-location-more-button-relative-position-top: 10%;
     }
 
     &__greeting {
-      // background-color: green;
-      padding-left: var(--main-left-padding);
+      // padding-left: var(--main-left-padding);
       h3 {
         font-weight: var(--regular);
       }
@@ -84,12 +82,23 @@ $time-location-more-button-relative-position-top: 10%;
   // Third row is for the location and more button
   &__location-more-button {
     display: flex;
-    // background-color: yellow;
     width: auto;
     justify-content: space-between;
-    padding-left: var(--main-left-padding);
+    // padding-left: var(--main-left-padding);
     padding-right: 320px;
-    position: relative;
+    flex-direction: column;
+
+    @media all and (min-width: $breakpoint-laptop) {
+      flex-direction: row;
+    }
+
+    @media all and (max-width: $breakpoint-mobile) {
+      padding-right: 0;
+      h3 {
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+    }
   }
 }
 
