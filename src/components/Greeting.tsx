@@ -21,7 +21,9 @@ function Greeting({ time }: Props) {
 
   return time ? (
     <div className="main__time__greeting">
-      <h3>Good {getTimeOfDay()}, it's currently</h3>
+      <h3>
+        Good {getTimeOfDay()} <span id="itsCurrently">, it's currently </span>
+      </h3>
     </div>
   ) : (
     <div className="main__time__no-greeting" />

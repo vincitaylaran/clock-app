@@ -81,7 +81,20 @@ $time-location-more-button-relative-position-top: 10%;
 
     &__greeting {
       h3 {
+        display: inline;
         font-weight: var(--regular);
+        font-size: 25px;
+
+        @media all and (max-width: $breakpoint-mobile) {
+          font-size: 18px;
+          letter-spacing: 3px;
+        }
+      }
+
+      span#itsCurrently {
+        @media all and (max-width: $breakpoint-mobile) {
+          display: none;
+        }
       }
     }
 
