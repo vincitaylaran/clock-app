@@ -64,21 +64,27 @@ function Time({ onMore, isMoreClicked }: Props) {
 
   return (
     <div className="main">
-      <div className="main__quote">
-        <Quote
-          quote={quote}
-          onNewQuote={fetchQuote}
-          isMoreClicked={isMoreClicked}
-        />
-      </div>
-      <div className={`main__time`}>
-        <Greeting time={time} />
-        <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
-      </div>
-      <div className={`main__location-more-button `}>
-        <Location city={city} regionCode={regionCode} />
-        <ExpandButton onMore={onMore} isMoreClicked={isMoreClicked} />
-      </div>
+      {time && timezoneAbbreviation && regionCode && city && quote ? (
+        <React.Fragment>
+          <div className="main__quote">
+            <Quote
+              quote={quote}
+              onNewQuote={fetchQuote}
+              isMoreClicked={isMoreClicked}
+            />
+          </div>
+          <div className={`main__time`}>
+            <Greeting time={time} />
+            <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
+          </div>
+          <div className={`main__location-more-button `}>
+            <Location city={city} regionCode={regionCode} />
+            <ExpandButton onMore={onMore} isMoreClicked={isMoreClicked} />
+          </div>
+        </React.Fragment>
+      ) : (
+        <h1>Loading...</h1> // TODO: replace with spinner
+      )}
     </div>
   )
 }
