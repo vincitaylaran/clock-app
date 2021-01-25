@@ -86,6 +86,24 @@ function Time({ onMore, isMoreClicked }: Props) {
         <h1>Loading...</h1> // TODO: replace with spinner
       )}
     </div>
+
+    // <div className="main">
+    //   <div className="main__quote">
+    //     <Quote
+    //       quote={quote}
+    //       onNewQuote={fetchQuote}
+    //       isMoreClicked={isMoreClicked}
+    //     />
+    //   </div>
+    //   <div className={`main__time`}>
+    //     <Greeting time={time} />
+    //     <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
+    //   </div>
+    //   <div className={`main__location-more-button `}>
+    //     <Location city={city} regionCode={regionCode} />
+    //     <ExpandButton onMore={onMore} isMoreClicked={isMoreClicked} />
+    //   </div>
+    // </div>
   )
 }
 
