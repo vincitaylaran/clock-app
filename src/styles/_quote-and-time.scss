@@ -80,13 +80,22 @@ $time-location-more-button-relative-position-top: 10%;
     }
 
     &__greeting {
+      display: flex;
+      background-color: red;
+
+      div#icon {
+        display: inline;
+        margin-right: 12px;
+      }
+
       h3 {
         display: inline;
         font-weight: var(--regular);
         font-size: 25px;
+        margin: 0;
 
         @media all and (max-width: $breakpoint-mobile) {
-          font-size: 18px;
+          font-size: 15px;
           letter-spacing: 3px;
         }
       }
