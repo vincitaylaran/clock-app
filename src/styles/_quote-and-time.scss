@@ -29,6 +29,11 @@ $time-location-more-button-relative-position-top: 10%;
           outline: none;
           background-color: inherit;
           cursor: pointer;
+
+          #refresh-icon:hover {
+            opacity: 1;
+            transition: 100ms;
+          }
         }
       }
     }

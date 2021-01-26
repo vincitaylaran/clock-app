@@ -1,12 +1,40 @@
 @import "./viewport-breakpoints";
 
 .more-button {
-  width: 146px;
-  height: 56px;
-  border-radius: 25px;
+  display: flex;
+  width: 115px;
+  height: 43px;
+  border-radius: 35px;
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-left: 13px;
 
-  @media all and (max-width: $breakpoint-mobile) {
-    width: 115px;
-    height: 39px;
+  &__text {
+    color: black;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 3.75px;
+    font-weight: var(--bold);
+  }
+
+  #circle-icon {
+    &:hover {
+      fill: #999999;
+      transition: 100ms;
+    }
+  }
+
+  #arrow-icon {
+  }
+
+  .flipped {
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+  }
+
+  @media all and (min-width: $breakpoint-tablet) {
+    cursor: pointer;
   }
 }
