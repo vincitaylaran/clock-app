@@ -1,18 +1,25 @@
 @import "./viewport-breakpoints";
 
 .header {
-  background-image: url("../assets/tablet/bg-image-daytime.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/tablet/bg-image-daytime.jpg");
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  padding: 20px 15px;
 
   @media all and (min-width: $breakpoint-laptop) {
-    background-image: url("../assets/desktop/bg-image-daytime.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../assets/desktop/bg-image-daytime.jpg");
+    background-size: cover;
   }
 
   @media all and (max-width: $breakpoint-mobile) {
-    background-image: url("../assets/mobile/bg-image-daytime.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../assets/mobile/bg-image-daytime.jpg");
+    background-size: cover;
   }
 }
 
