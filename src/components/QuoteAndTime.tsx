@@ -73,13 +73,15 @@ function Time({ onMore, isMoreClicked }: Props) {
               isMoreClicked={isMoreClicked}
             />
           </div>
-          <div className={`main__time`}>
-            <Greeting time={time} />
-            <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
-          </div>
-          <div className={`main__location-more-button `}>
-            <Location city={city} regionCode={regionCode} />
-            <ExpandButton onMore={onMore} isMoreClicked={isMoreClicked} />
+          <div>
+            <div className={`main__time`}>
+              <Greeting time={time} />
+              <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
+            </div>
+            <div className={`main__location-more-button `}>
+              <Location city={city} regionCode={regionCode} />
+              <ExpandButton onMore={onMore} isMoreClicked={isMoreClicked} />
+            </div>
           </div>
         </React.Fragment>
       ) : (

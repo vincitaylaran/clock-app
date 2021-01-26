@@ -7,22 +7,19 @@ $time-location-more-button-relative-position-top: 10%;
   flex-direction: column;
   color: white;
   min-width: 100%;
+  justify-content: space-between;
 
   // First row is the quote
   &__quote {
-    // padding-left: var(--main-left-padding);
     max-width: 573px;
-    // height: 125px;
 
     &__content-and-author {
       #quote {
         display: flex;
-        background-color: yellow;
         justify-content: space-between;
         #content {
           font-weight: var(--regular);
           margin: 0px;
-          background-color: blue;
         }
 
         button.refresh-button {
@@ -30,7 +27,7 @@ $time-location-more-button-relative-position-top: 10%;
           height: 23px;
           border: none;
           outline: none;
-          background-color: red;
+          background-color: inherit;
           cursor: pointer;
         }
       }
@@ -45,7 +42,6 @@ $time-location-more-button-relative-position-top: 10%;
   &__time {
     &__time-unit {
       // padding-left: var(--main-left-padding);
-      background-color: black;
       h1 {
         margin: 0px 0px;
         display: inline;
@@ -81,7 +77,6 @@ $time-location-more-button-relative-position-top: 10%;
 
     &__greeting {
       display: flex;
-      background-color: red;
 
       div#icon {
         display: inline;
