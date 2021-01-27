@@ -66,7 +66,7 @@ function Time({ onMore, isMoreClicked }: Props) {
     <div className="main">
       {time && timezoneAbbreviation && regionCode && city && quote ? (
         <React.Fragment>
-          <div className="main__quote">
+          <div className={`main__quote ${isMoreClicked ? "hidden" : ""}`}>
             <Quote
               quote={quote}
               onNewQuote={fetchQuote}

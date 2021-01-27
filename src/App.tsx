@@ -17,7 +17,6 @@ function App() {
       <Header isMoreClicked={isMoreClicked}>
         <QuoteAndTime onMore={onMore} isMoreClicked={isMoreClicked} />
       </Header>
-      {/* <MorePanel> */}
     </div>
   )
 }

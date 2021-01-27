@@ -7,11 +7,7 @@ interface Props {
 }
 
 function Header({ children, isMoreClicked }: Props) {
-  return (
-    <div className={`header ${isMoreClicked ? "height-50vh" : "height-100vh"}`}>
-      {children}
-    </div>
-  )
+  return <div className="header height-100vh">{children}</div>
 }
 
 export default Header
