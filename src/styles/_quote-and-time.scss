@@ -134,11 +134,6 @@ $time-location-more-button-relative-position-top: 10%;
   }
 }
 
-// Needed when isMoreClicked prop is true or false in <QuoteAndTime />
-.top-10 {
-  top: $time-location-more-button-relative-position-top;
-}
-
-.bottom-18 {
-  bottom: 18%;
+.hidden {
+  display: none;
 }

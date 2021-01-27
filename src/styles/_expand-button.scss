@@ -11,19 +11,19 @@
   box-sizing: border-box;
   padding-left: 13px;
 
+  &:hover {
+    #circle-icon {
+      fill: #999999;
+      transition: 100ms;
+    }
+  }
+
   &__text {
     color: black;
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 3.75px;
     font-weight: var(--bold);
-  }
-
-  #circle-icon {
-    &:hover {
-      fill: #999999;
-      transition: 100ms;
-    }
   }
 
   #arrow-icon {
