@@ -2,6 +2,17 @@
 
 $time-location-more-button-relative-position-top: 10%;
 
+@keyframes fade-in-top {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -12,14 +23,22 @@ $time-location-more-button-relative-position-top: 10%;
   // First row is the quote
   &__quote {
     max-width: 573px;
+    opacity: 1;
 
     &__content-and-author {
+      #author {
+        opacity: 0;
+        animation: fade-in-top ease 0.4s forwards;
+      }
+
       #quote {
         display: flex;
         justify-content: space-between;
         #content {
           font-weight: var(--regular);
           margin: 0px;
+          opacity: 0;
+          animation: fade-in-top ease 0.4s forwards;
         }
 
         button.refresh-button {
