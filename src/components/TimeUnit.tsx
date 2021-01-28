@@ -7,7 +7,7 @@ interface Props {
 
 function TimeUnit({ time, abbreviation }: Props) {
   return time && abbreviation ? (
-    <div className="main__time__time-unit">
+    <div className="main__time__time-unit fade-in">
       <h1>{time}</h1>
       <h3>{abbreviation}</h3>
     </div>

@@ -62,22 +62,34 @@ function Time({ onMore, isMoreClicked }: Props) {
     fetchCity()
   }, [])
 
+  /**
+   * Components render
+   *  when Quote and Time first render
+   *    use fade-in animation
+   *  when ExpandButton is clicked
+   *    use fade-out animation on Quote
+   *    use slide-up animation on Time
+   *  when ExpandButton is clicked again
+   *    use fade-in animation for Quote
+   *    use slide-down animation on Time
+   */
+
   return (
     <div className="main">
       {time && timezoneAbbreviation && regionCode && city && quote ? (
         <React.Fragment>
-          <div
-            className={`main__quote ${
-              isMoreClicked ? "fade-out-top delay" : undefined
-            }`}
-          >
+          <div className={`main__quote`}>
             <Quote
               quote={quote}
               onNewQuote={fetchQuote}
               isMoreClicked={isMoreClicked}
             />
           </div>
-          <div className="main__time-container">
+          <div
+            className={`main__time-container ${
+              isMoreClicked ? "slide-up" : ""
+            }`}
+          >
             <div className={`main__time`}>
               <Greeting time={time} />
               <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
@@ -92,32 +104,7 @@ function Time({ onMore, isMoreClicked }: Props) {
         <h1>Loading...</h1> // TODO: replace with spinner
       )}
     </div>
-
-    // <div className="main">
-    //   <div className="main__quote">
-    //     <Quote
-    //       quote={quote}
-    //       onNewQuote={fetchQuote}
-    //       isMoreClicked={isMoreClicked}
-    //     />
-    //   </div>
-    //   <div className={`main__time`}>
-    //     <Greeting time={time} />
-    //     <TimeUnit time={time} abbreviation={timezoneAbbreviation} />
-    //   </div>
-    //   <div className={`main__location-more-button `}>
-    //     <Location city={city} regionCode={regionCode} />
-    //     <ExpandButton onMore={onMore} isMoreClicked={isMoreClicked} />
-    //   </div>
-    // </div>
   )
 }
 
 export default Time
-
-/**
- <Greeting time:string />
- <TimeUnit time:string abbreviation:string />
- <Location city:string regionCode:string />
- <ExpandButton onClick />
- */

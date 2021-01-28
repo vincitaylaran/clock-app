@@ -28,17 +28,18 @@ function RefreshIcon() {
 
 function Quote({ quote, onNewQuote, isMoreClicked }: Props) {
   return quote ? (
-    <div className="main__quote__content-and-author">
-      <div
-        className={`${isMoreClicked ? "fade-out-top" : undefined}`}
-        id="quote"
-      >
-        <h5 id="content">"{quote.content}" </h5>
+    <div
+      className={`main__quote__content-and-author fade-in ${
+        isMoreClicked ? "fade-out" : ""
+      }`}
+    >
+      <div className={`${isMoreClicked ? "fade-out" : ""}`} id="quote">
+        <h5 id="content">"{quote.content}"</h5>
         <button className="refresh-button" onClick={onNewQuote}>
           <RefreshIcon />
         </button>
       </div>
-      <div className={`${isMoreClicked ? "fade-out-top" : undefined}`}>
+      <div className={`${isMoreClicked ? "fade-out" : ""}`}>
         <h4 id="author">{quote.author}</h4>
       </div>
     </div>

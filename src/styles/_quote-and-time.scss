@@ -7,17 +7,14 @@ $time-location-more-button-relative-position-top: 10%;
   // flex-direction: column;
   color: white;
   min-width: 100%;
-  background: blue;
 
   // First row is the quote
   &__quote {
+    background: red;
     max-width: 573px;
-    opacity: 1;
-    background: green;
 
     &__content-and-author {
       #author {
-        opacity: 0;
         animation: fade-in-top ease 0.4s forwards;
       }
 
@@ -27,7 +24,6 @@ $time-location-more-button-relative-position-top: 10%;
         #content {
           font-weight: var(--regular);
           margin: 0px;
-          opacity: 0;
           animation: fade-in-top ease 0.4s forwards;
         }
 
@@ -37,6 +33,7 @@ $time-location-more-button-relative-position-top: 10%;
           border: none;
           outline: none;
           background-color: inherit;
+
           cursor: pointer;
 
           #refresh-icon:hover {
@@ -54,10 +51,8 @@ $time-location-more-button-relative-position-top: 10%;
 
   // Second row is for the greeting and time
   &__time-container {
-    background: red;
-    position: relative;
-    top: 30%;
-    // animation: to-top 500ms;
+    position: absolute;
+    top: 50%;
   }
 
   &__time {
@@ -148,5 +143,3 @@ $time-location-more-button-relative-position-top: 10%;
     }
   }
 }
-
-/* ANIMATIONS */

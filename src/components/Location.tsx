@@ -11,7 +11,7 @@ function Location({ city, regionCode }: Props) {
       In {city}, {regionCode}
     </h3>
   ) : (
-    <div className="main__time__no-location" />
+    <div className="main__time__no-location fade-in" />
   )
 }
 

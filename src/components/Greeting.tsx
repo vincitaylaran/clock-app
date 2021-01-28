@@ -43,7 +43,7 @@ function Greeting({ time }: Props) {
   const { icon, word } = getTimeOfDay()
 
   return time ? (
-    <div className="main__time__greeting">
+    <div className="main__time__greeting fade-in">
       <div id="icon">{icon}</div>
       <h3>
         Good {word}
