@@ -1,0 +1,30 @@
+.fade-out-top {
+  animation: fade-out-top ease 400ms forwards;
+}
+
+.delay {
+  animation-delay: 450ms;
+}
+
+@keyframes fade-in-top {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out-top {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    height: 0;
+    transform: translateY(-15px);
+  }
+}

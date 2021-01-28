@@ -66,14 +66,18 @@ function Time({ onMore, isMoreClicked }: Props) {
     <div className="main">
       {time && timezoneAbbreviation && regionCode && city && quote ? (
         <React.Fragment>
-          <div className={`main__quote`}>
+          <div
+            className={`main__quote ${
+              isMoreClicked ? "fade-out-top delay" : undefined
+            }`}
+          >
             <Quote
               quote={quote}
               onNewQuote={fetchQuote}
               isMoreClicked={isMoreClicked}
             />
           </div>
-          <div>
+          <div className="main__time-container">
             <div className={`main__time`}>
               <Greeting time={time} />
               <TimeUnit time={time} abbreviation={timezoneAbbreviation} />

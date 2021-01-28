@@ -1,29 +1,19 @@
 @import "./viewport-breakpoints";
+@import "./animations";
 
 $time-location-more-button-relative-position-top: 10%;
 
-@keyframes fade-in-top {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .main {
-  display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   color: white;
   min-width: 100%;
-  justify-content: space-between;
+  background: blue;
 
   // First row is the quote
   &__quote {
     max-width: 573px;
     opacity: 1;
+    background: green;
 
     &__content-and-author {
       #author {
@@ -63,9 +53,15 @@ $time-location-more-button-relative-position-top: 10%;
   }
 
   // Second row is for the greeting and time
+  &__time-container {
+    background: red;
+    position: relative;
+    top: 30%;
+    // animation: to-top 500ms;
+  }
+
   &__time {
     &__time-unit {
-      // padding-left: var(--main-left-padding);
       h1 {
         margin: 0px 0px;
         display: inline;
@@ -153,6 +149,4 @@ $time-location-more-button-relative-position-top: 10%;
   }
 }
 
-.hidden {
-  display: none;
-}
+/* ANIMATIONS */
