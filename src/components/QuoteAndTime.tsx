@@ -87,7 +87,7 @@ function Time({ onMore, isMoreClicked }: Props) {
           </div>
           <div
             className={`main__time-container ${
-              isMoreClicked ? "slide-up" : ""
+              isMoreClicked ? "slide-up " : "fade-in"
             }`}
           >
             <div className={`main__time`}>

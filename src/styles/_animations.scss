@@ -8,6 +8,7 @@
 
 .slide-up {
   animation: slideUp ease-in 400ms forwards;
+  animation-delay: 200ms;
 }
 
 @keyframes slideUp {
@@ -15,7 +16,7 @@
     top: 50%;
   }
   to {
-    top: 0;
+    top: 5%;
   }
 }
 
