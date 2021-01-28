@@ -7,7 +7,7 @@
 }
 
 .slide-up {
-  animation: slideUp ease-in 400ms;
+  animation: slideUp ease-in 400ms forwards;
 }
 
 @keyframes slideUp {
