@@ -1,6 +1,7 @@
 .more-panel {
   height: 0;
-  background: red;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(9px);
   z-index: 1;
   width: 100%;
   position: absolute;

@@ -2,6 +2,7 @@ import "styles/_more-panel.scss"
 
 interface Props {
   isMoreClicked: boolean
+  isMorePanelVisible: boolean
 }
 
 /**
@@ -15,9 +16,11 @@ interface Props {
  *
  */
 
-function MorePanel({ isMoreClicked }: Props) {
+function MorePanel({ isMoreClicked, isMorePanelVisible }: Props) {
   return (
-    <div className={`more-panel ${isMoreClicked ? "visible" : "hidden"}`}></div>
+    <div className={`more-panel  ${isMoreClicked && "visible"} `}>
+      <h1>Hello world</h1>
+    </div>
   )
 }
 

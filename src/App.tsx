@@ -8,10 +8,11 @@ import "styles/_base.scss"
 
 function App() {
   const [isMoreClicked, setIsMoreClicked] = useState<boolean>(false)
-  const [isMorePanelOpen, setIsMorePanelOpen] = useState<boolean>(false)
+  const [isMorePanelVisible, setIsMorePanelVisible] = useState<boolean>(false)
 
   const onMore = () => {
     setIsMoreClicked(isMoreClicked ? false : true)
+    setIsMorePanelVisible(isMoreClicked ? true : false)
   }
 
   return (
@@ -19,7 +20,10 @@ function App() {
       <Header isMoreClicked={isMoreClicked}>
         <QuoteAndTime onMore={onMore} isMoreClicked={isMoreClicked} />
       </Header>
-      <MorePanel isMoreClicked={isMoreClicked} />
+      <MorePanel
+        isMoreClicked={isMoreClicked}
+        isMorePanelVisible={isMorePanelVisible}
+      />
     </div>
   )
 }
