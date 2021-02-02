@@ -7,8 +7,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
+  // display: flex;
+  // position: absolute;
   padding: 20px 15px;
+  z-index: -1;
 
   @media all and (min-width: $breakpoint-laptop) {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),

@@ -1,0 +1,19 @@
+.more-panel {
+  height: 0;
+  background: red;
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  top: 54.6%;
+
+  transform-origin: 0 100%;
+  transition: transform 400ms;
+  transition-delay: 200ms;
+  transform: scaleY(0);
+  transition-timing-function: ease-in;
+}
+
+.visible {
+  height: 50vh;
+  transform: scaleY(1);
+}
