@@ -4,9 +4,14 @@
 $time-location-more-button-relative-position-top: 10%;
 
 .main {
-  // flex-direction: column;
   color: white;
   min-width: 100%;
+  box-sizing: border-box;
+  padding-left: 20px;
+
+  @media all and (min-width: $breakpoint-tablet) {
+    padding-left: 70px;
+  }
 
   // First row is the quote
   &__quote {
@@ -15,6 +20,9 @@ $time-location-more-button-relative-position-top: 10%;
     &__content-and-author {
       #author {
         animation: fade-in-top ease 0.4s forwards;
+        @media all and (max-width: $breakpoint-tablet) {
+          font-size: 16px;
+        }
       }
 
       #quote {
@@ -24,6 +32,9 @@ $time-location-more-button-relative-position-top: 10%;
           font-weight: var(--regular);
           margin: 0px;
           animation: fade-in-top ease 0.4s forwards;
+          @media all and (max-width: $breakpoint-tablet) {
+            font-size: 15px;
+          }
         }
 
         button.refresh-button {
@@ -51,21 +62,36 @@ $time-location-more-button-relative-position-top: 10%;
   // Second row is for the greeting and time
   &__time-container {
     position: absolute;
-    top: 50%;
+    top: 58%;
+    @media all and (min-width: $breakpoint-tablet) {
+      width: 90%;
+    }
   }
 
   &__time {
+    margin-bottom: -25px;
+
     &__time-unit {
       h1 {
         margin: 0px 0px;
         display: inline;
         letter-spacing: -2.5px;
+        margin-right: 10px;
       }
 
       h3 {
         display: inline;
         font-weight: var(--light);
         letter-spacing: 0;
+      }
+
+      @media all and (max-width: $breakpoint-tablet) {
+        h1 {
+          font-size: 170px;
+        }
+        h3 {
+          font-size: 23px;
+        }
       }
 
       @media all and (max-width: $breakpoint-mobile) {
@@ -99,13 +125,17 @@ $time-location-more-button-relative-position-top: 10%;
 
       h3 {
         display: inline;
-        font-weight: var(--regular);
+        font-weight: var(--light);
         font-size: 25px;
         margin: 0;
+        letter-spacing: 3.6px;
+
+        @media all and (max-width: $breakpoint-tablet) {
+          font-size: 18px;
+        }
 
         @media all and (max-width: $breakpoint-mobile) {
           font-size: 15px;
-          letter-spacing: 3px;
         }
       }
 
@@ -123,20 +153,26 @@ $time-location-more-button-relative-position-top: 10%;
   // Third row is for the location and more button
   &__location-more-button {
     display: flex;
-    width: auto;
+    width: 95%;
     justify-content: space-between;
-    padding-right: 320px;
     flex-direction: column;
+    margin-top: 23px;
+    // background: red;
+
+    h3 {
+      font-weight: var(--regular);
+    }
 
     @media all and (min-width: $breakpoint-laptop) {
       flex-direction: row;
+      align-items: center;
     }
 
-    @media all and (max-width: $breakpoint-mobile) {
+    @media all and (max-width: $breakpoint-tablet) {
       padding-right: 0;
       h3 {
         font-size: 18px;
-        letter-spacing: 3px;
+        margin-bottom: 90px;
       }
     }
   }
