@@ -26,11 +26,17 @@ interface IItemContent {
  */
 
 function ItemContent({ id, label, value }: IItemContent) {
+  const { isMorningOrAfternoon } = useTime()
+
   return (
     <div id={id} className="more-panel__container__item__content">
       <div>
-        <h6>{label}</h6>
-        <h2>{value}</h2>
+        <h6 style={{ color: isMorningOrAfternoon ? "black" : "white" }}>
+          {label}
+        </h6>
+        <h2 style={{ color: isMorningOrAfternoon ? "black" : "white" }}>
+          {value}
+        </h2>
       </div>
     </div>
   )
@@ -44,6 +50,29 @@ function MorePanelItem({ children, id }: IMorePanelItem) {
   )
 }
 
+function Panel({
+  children,
+  isMoreClicked,
+}: {
+  children: ReactNode
+  isMoreClicked: boolean
+}) {
+  const { isMorningOrAfternoon } = useTime()
+
+  return (
+    <div
+      style={{
+        background: isMorningOrAfternoon
+          ? "rgba(255,255,255,0.75)"
+          : "rgba(0,0,0,0.75)",
+      }}
+      className={`more-panel ${isMoreClicked && "visible"}`}
+    >
+      {children}
+    </div>
+  )
+}
+
 /**
  * set initial opacity of container to 0
  * transition from 0 to 1 with an animation delay
@@ -51,10 +80,18 @@ function MorePanelItem({ children, id }: IMorePanelItem) {
  */
 
 function MorePanel({ isMoreClicked }: IMorePanel) {
-  const { timezone, dayOfWeek, dayOfYear, weekNumber } = useTime()
+  const {
+    timezone,
+    dayOfWeek,
+    dayOfYear,
+    weekNumber,
+    isMorningOrAfternoon,
+  } = useTime()
+
+  console.log(isMorningOrAfternoon)
 
   return timezone && dayOfWeek && dayOfYear && weekNumber ? (
-    <div className={`more-panel  ${isMoreClicked && "visible"} `}>
+    <Panel isMoreClicked={isMoreClicked}>
       <div className={`more-panel__container ${isMoreClicked && "fade-in"}`}>
         <MorePanelItem id="item-1">
           <ItemContent label="current timezone" value={timezone} />
@@ -65,7 +102,7 @@ function MorePanel({ isMoreClicked }: IMorePanel) {
           <ItemContent label="week number" value={weekNumber} />
         </MorePanelItem>
       </div>
-    </div>
+    </Panel>
   ) : (
     <h1>Loading</h1>
   )
