@@ -62,18 +62,6 @@ function Time({ onMore, isMoreClicked }: Props) {
     fetchCity()
   }, [])
 
-  /**
-   * Components render
-   *  when Quote and Time first render
-   *    use fade-in animation
-   *  when ExpandButton is clicked
-   *    use fade-out animation on Quote
-   *    use slide-up animation on Time
-   *  when ExpandButton is clicked again
-   *    use fade-in animation for Quote
-   *    use slide-down animation on Time
-   */
-
   return (
     <div className="main">
       {time && timezoneAbbreviation && regionCode && city && quote ? (

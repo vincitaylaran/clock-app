@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import "styles/_more-panel.scss"
 
-interface Props {
+interface IMorePanel {
   isMoreClicked: boolean
   isMorePanelVisible: boolean
 }
@@ -43,7 +43,7 @@ function MorePanelItem({ children, id }: IMorePanelItem) {
   )
 }
 
-function MorePanel({ isMoreClicked, isMorePanelVisible }: Props) {
+function MorePanel({ isMoreClicked, isMorePanelVisible }: IMorePanel) {
   return (
     <div className={`more-panel  ${isMoreClicked && "visible"} `}>
       <div className="more-panel__container">
