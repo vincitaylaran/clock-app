@@ -104,14 +104,8 @@ $time-location-more-button-relative-position-top: 10%;
       }
     }
 
-    &__no-time-unit {
-    }
-
     &__location {
       width: auto;
-    }
-
-    &__no-location {
     }
 
     &__greeting {
@@ -154,6 +148,7 @@ $time-location-more-button-relative-position-top: 10%;
     display: flex;
     width: 95%;
     justify-content: space-between;
+    padding-right: 320px;
     flex-direction: column;
     margin-top: 23px;
     // background: red;

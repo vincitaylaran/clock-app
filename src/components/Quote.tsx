@@ -1,17 +1,10 @@
 import "styles/_quote-and-time.scss"
-
-export interface RandomQuote {
-  content: string | undefined
-  author: string | undefined
-}
+import useQuote from "hooks/useQuote"
 
 interface Props {
-  quote: RandomQuote | undefined
   isMoreClicked: boolean
-  onNewQuote: () => void
 }
 
-// TODO: change opacity of icon on hover
 function RefreshIcon() {
   return (
     <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
@@ -26,20 +19,22 @@ function RefreshIcon() {
   )
 }
 
-function Quote({ quote, onNewQuote, isMoreClicked }: Props) {
-  return quote ? (
+function Quote({ isMoreClicked }: Props) {
+  const { quote, fetchQuote } = useQuote()
+
+  return quote && !isMoreClicked ? (
     <div
       className={`main__quote__content-and-author fade-in ${
-        isMoreClicked ? "fade-out" : ""
+        isMoreClicked && "fade-out"
       }`}
     >
-      <div className={`${isMoreClicked ? "fade-out" : ""}`} id="quote">
-        <h5 id="content">"{quote.content}"</h5>
-        <button className="refresh-button" onClick={onNewQuote}>
+      <div className={`${isMoreClicked && "fade-out"}`} id="quote">
+        <h5 id="content">"{quote.content}" </h5>
+        <button className="refresh-button" onClick={fetchQuote}>
           <RefreshIcon />
         </button>
       </div>
-      <div className={`${isMoreClicked ? "fade-out" : ""}`}>
+      <div className={`${isMoreClicked && "fade-out"}`}>
         <h4 id="author">{quote.author}</h4>
       </div>
     </div>

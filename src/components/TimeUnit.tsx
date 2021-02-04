@@ -1,15 +1,18 @@
 import React from "react"
+import useTime from "hooks/useTime"
 
 interface Props {
   time: string | undefined
   abbreviation: string | undefined
 }
 
-function TimeUnit({ time, abbreviation }: Props) {
-  return time && abbreviation ? (
+function TimeUnit() {
+  const { time, timezoneAbbreviation } = useTime()
+
+  return time && timezoneAbbreviation ? (
     <div className="main__time__time-unit fade-in">
       <h1>{time}</h1>
-      <h3>{abbreviation}</h3>
+      <h3>{timezoneAbbreviation}</h3>
     </div>
   ) : (
     <div className="main__time__no-time-unit" />
