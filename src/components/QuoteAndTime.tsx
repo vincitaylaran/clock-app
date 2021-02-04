@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 
 import "styles/_quote-and-time.scss"
 
@@ -9,6 +9,7 @@ import Quote from "components/Quote"
 import ExpandButton from "components/ExpandButton"
 
 import useTime from "hooks/useTime"
+import useLocation from "hooks/useLocation"
 
 interface Props {
   onMore: () => void
@@ -16,27 +17,14 @@ interface Props {
 }
 
 function Time({ onMore, isMoreClicked }: Props) {
-  const [regionCode, setRegionCode] = useState<string | undefined>()
-  const [city, setCity] = useState<string | undefined>()
   const { time } = useTime()
-
-  const fetchCity = async () => {
-    const request = await fetch("https://freegeoip.app/json/")
-    const response = await request.json()
-    const { region_code, city } = response
-    setCity(city)
-    setRegionCode(region_code)
-  }
-
-  useEffect(() => {
-    fetchCity()
-  }, [])
+  const { city, regionCode } = useLocation()
 
   return (
     <div className="main">
       {time && regionCode && city ? (
         <React.Fragment>
-          <div className={`main__quote`}>
+          <div className="main__quote">
             <Quote isMoreClicked={isMoreClicked} />
           </div>
           <div
@@ -48,8 +36,8 @@ function Time({ onMore, isMoreClicked }: Props) {
               <Greeting />
               <TimeUnit />
             </div>
-            <div className={`main__location-more-button `}>
-              <Location city={city} regionCode={regionCode} />
+            <div className={`main__location-more-button`}>
+              <Location />
               <ExpandButton onMore={onMore} isMoreClicked={isMoreClicked} />
             </div>
           </div>

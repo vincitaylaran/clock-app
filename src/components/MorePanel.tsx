@@ -1,9 +1,10 @@
-import { ReactNode } from "react"
+import React, { ReactNode } from "react"
 import "styles/_more-panel.scss"
+
+import useTime from "hooks/useTime"
 
 interface IMorePanel {
   isMoreClicked: boolean
-  isMorePanelVisible: boolean
 }
 
 interface IMorePanelItem {
@@ -43,20 +44,30 @@ function MorePanelItem({ children, id }: IMorePanelItem) {
   )
 }
 
-function MorePanel({ isMoreClicked, isMorePanelVisible }: IMorePanel) {
-  return (
+/**
+ * set initial opacity of container to 0
+ * transition from 0 to 1 with an animation delay
+ *
+ */
+
+function MorePanel({ isMoreClicked }: IMorePanel) {
+  const { timezone, dayOfWeek, dayOfYear, weekNumber } = useTime()
+
+  return timezone && dayOfWeek && dayOfYear && weekNumber ? (
     <div className={`more-panel  ${isMoreClicked && "visible"} `}>
-      <div className="more-panel__container">
+      <div className={`more-panel__container ${isMoreClicked && "fade-in"}`}>
         <MorePanelItem id="item-1">
-          <ItemContent label="current timezone" value="europe/london" />
-          <ItemContent label="day of the year" value="295" />
+          <ItemContent label="current timezone" value={timezone} />
+          <ItemContent label="day of the year" value={dayOfYear} />
         </MorePanelItem>
         <MorePanelItem id="item-2">
-          <ItemContent label="day of the week" value={5} />
-          <ItemContent label="week number" value={42} />
+          <ItemContent label="day of the week" value={dayOfWeek} />
+          <ItemContent label="week number" value={weekNumber} />
         </MorePanelItem>
       </div>
     </div>
+  ) : (
+    <h1>Loading</h1>
   )
 }
 

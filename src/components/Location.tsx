@@ -1,11 +1,8 @@
-import React from "react"
+import useLocation from "hooks/useLocation"
 
-interface Props {
-  city: string | undefined
-  regionCode: string | undefined
-}
+function Location() {
+  const { city, regionCode } = useLocation()
 
-function Location({ city, regionCode }: Props) {
   return city && regionCode ? (
     <h3>
       In {city}, {regionCode}
