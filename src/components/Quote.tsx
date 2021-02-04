@@ -1,17 +1,10 @@
 import "styles/_quote-and-time.scss"
-
-export interface RandomQuote {
-  content: string | undefined
-  author: string | undefined
-}
+import useQuote from "useQuote"
 
 interface Props {
-  quote: RandomQuote | undefined
   isMoreClicked: boolean
-  onNewQuote: () => void
 }
 
-// TODO: change opacity of icon on hover
 function RefreshIcon() {
   return (
     <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
@@ -26,12 +19,16 @@ function RefreshIcon() {
   )
 }
 
-function Quote({ quote, onNewQuote, isMoreClicked }: Props) {
+function Quote({ isMoreClicked }: Props) {
+  const { quote, fetchQuote } = useQuote()
+
+  console.log(quote)
+
   return quote && !isMoreClicked ? (
     <div className="main__quote__content-and-author">
       <div id="quote">
         <h5 id="content">"{quote.content}" </h5>
-        <button className="refresh-button" onClick={onNewQuote}>
+        <button className="refresh-button" onClick={fetchQuote}>
           <RefreshIcon />
         </button>
       </div>
