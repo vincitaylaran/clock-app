@@ -1,5 +1,5 @@
 import "styles/_quote-and-time.scss"
-import useQuote from "useQuote"
+import useQuote from "hooks/useQuote"
 
 interface Props {
   isMoreClicked: boolean
@@ -21,8 +21,6 @@ function RefreshIcon() {
 
 function Quote({ isMoreClicked }: Props) {
   const { quote, fetchQuote } = useQuote()
-
-  console.log(quote)
 
   return quote && !isMoreClicked ? (
     <div className="main__quote__content-and-author">

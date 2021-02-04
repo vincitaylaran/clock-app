@@ -1,3 +1,5 @@
+import useTime from "hooks/useTime"
+
 interface Props {
   time: string | undefined
 }
@@ -26,7 +28,9 @@ function MoonIcon() {
   )
 }
 
-function Greeting({ time }: Props) {
+function Greeting() {
+  const { time } = useTime()
+
   const getTimeOfDay = () => {
     if (time) {
       const [hour] = time.split(":")

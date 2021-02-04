@@ -65,7 +65,6 @@ $time-location-more-button-relative-position-top: 10%;
   // Second row is for the greeting and time
   &__time {
     &__time-unit {
-      // padding-left: var(--main-left-padding);
       h1 {
         margin: 0px 0px;
         display: inline;
@@ -89,14 +88,8 @@ $time-location-more-button-relative-position-top: 10%;
       }
     }
 
-    &__no-time-unit {
-    }
-
     &__location {
       width: auto;
-    }
-
-    &__no-location {
     }
 
     &__greeting {
@@ -135,7 +128,6 @@ $time-location-more-button-relative-position-top: 10%;
     display: flex;
     width: auto;
     justify-content: space-between;
-    // padding-left: var(--main-left-padding);
     padding-right: 320px;
     flex-direction: column;
 
