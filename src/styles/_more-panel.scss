@@ -1,7 +1,9 @@
+@import "./viewport-breakpoints";
+
 .more-panel {
   height: 0;
   background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(9px);
+  backdrop-filter: blur(5px);
   z-index: 1;
   width: 100%;
   position: absolute;
@@ -12,6 +14,118 @@
   transition-delay: 200ms;
   transform: scaleY(0);
   transition-timing-function: ease-in;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    // background: red;
+    padding: 50px 0;
+
+    @media all and (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+    }
+
+    @media all and (max-width: $breakpoint-mobile) {
+      div {
+        display: flex;
+      }
+    }
+
+    #item-1 {
+      // background: green;
+      border-right-style: solid;
+      border-right-width: thin;
+      border-color: rgba(151, 151, 151, 0.75);
+      @media all and (min-width: $breakpoint-tablet) {
+        padding-left: 90px;
+      }
+    }
+
+    #item-2 {
+      // background: blue;
+      @media all and (min-width: $breakpoint-tablet) {
+        padding-left: 90px;
+      }
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 100%;
+      // padding-left: 5%;
+
+      @media all and (min-width: $breakpoint-tablet) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        width: 100%;
+      }
+
+      @media all and (max-width: $breakpoint-mobile) {
+        height: 100%;
+      }
+
+      &__content {
+        // background: aqua;
+        height: 50%;
+
+        @media all and (min-width: $breakpoint-tablet) {
+          margin-bottom: 50px;
+          padding-right: 50px;
+        }
+
+        @media all and (max-width: $breakpoint-mobile) {
+          padding: 0 20px;
+        }
+
+        div {
+          // background: orange;
+
+          @media all and (max-width: $breakpoint-mobile) {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+
+        h6 {
+          font-weight: var(--regular);
+          text-transform: uppercase;
+          margin: 0;
+          margin-bottom: 10px;
+
+          @media all and (max-width: $breakpoint-tablet) {
+            font-size: 12px;
+          }
+
+          @media all and (max-width: $breakpoint-mobile) {
+            font-size: 10px;
+          }
+        }
+
+        h2 {
+          letter-spacing: 0;
+          text-transform: capitalize;
+          margin: 0;
+
+          @media all and (max-width: $breakpoint-tablet) {
+            font-size: 28px;
+          }
+
+          @media all and (max-width: $breakpoint-mobile) {
+            font-size: 23px;
+          }
+        }
+      }
+    }
+  }
 }
 
 .visible {
