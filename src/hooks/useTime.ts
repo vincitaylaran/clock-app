@@ -37,7 +37,7 @@ function useTime() {
         const hour = Number(time[0] + time[1])
 
         if (hour >= 12 && hour <= 19) {
-          setIsMorningOrAfternoon(false) // TODO: set back to true when finished with night time styles
+          setIsMorningOrAfternoon(true)
         }
       }
     }
