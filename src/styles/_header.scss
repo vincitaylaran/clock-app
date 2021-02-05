@@ -1,18 +1,42 @@
 @import "./viewport-breakpoints";
 
-.desktop-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+.desktop-bg-light {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
     url("../assets/desktop/bg-image-daytime.jpg");
 }
 
-.tablet-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+.tablet-bg-light {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
     url("../assets/tablet/bg-image-daytime.jpg");
 }
 
-.mobile-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+.mobile-bg-light {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
     url("../assets/mobile/bg-image-daytime.jpg");
+}
+
+.desktop-bg-dark {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/desktop/bg-image-nighttime.jpg");
+}
+
+.tablet-bg-dark {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/tablet/bg-image-nighttime.jpg");
+}
+
+.mobile-bg-dark {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/mobile/bg-image-nighttime.jpg");
 }
 
 .header {

@@ -12,21 +12,28 @@ function useBackgroundClass() {
   const desktopBreakpoint = useMediaQuery("only screen and (min-width: 1024px)")
   const tabletBreakpoint = useMediaQuery("only screen and (max-width: 768px)")
   // const mobileBreakpoint = useMediaQuery("only screen and (max-width: 450px)")
+  const { isMorningOrAfternoon } = useTime()
 
   if (desktopBreakpoint) {
-    return "desktop-bg"
+    if (isMorningOrAfternoon) {
+      return "desktop-bg-light"
+    }
+    return "desktop-bg-dark"
   } else if (tabletBreakpoint) {
-    return "tablet-bg"
+    if (isMorningOrAfternoon) {
+      return "tablet-bg-light"
+    }
+    return "tablet-bg-dark"
+  } else {
+    if (isMorningOrAfternoon) {
+      return "mobile-bg-dark"
+    }
+    return "mobile-bg-light"
   }
-
-  return "mobile-bg"
 }
 
 function Header({ children, isMoreClicked }: Props) {
-  const { isMorningOrAfternoon } = useTime()
   const className = useBackgroundClass()
-
-  console.log(className)
 
   return <div className={`${className} header height-100vh`}>{children}</div>
 }
