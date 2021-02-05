@@ -87,11 +87,11 @@ function MorePanel({ isMoreClicked }: IMorePanel) {
       <div className={`more-panel__container ${isMoreClicked && "fade-in"}`}>
         <MorePanelItem id="item-1">
           <ItemContent label="current timezone" value={timezone} />
-          <ItemContent label="day of the year" value={dayOfYear} />
+          <ItemContent label="date" value={dayOfYear} />
         </MorePanelItem>
         <MorePanelItem id="item-2">
           <ItemContent label="day of the week" value={dayOfWeek} />
-          <ItemContent label="week number" value={weekNumber} />
+          <ItemContent label="day" value={weekNumber} />
         </MorePanelItem>
       </div>
     </Panel>

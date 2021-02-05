@@ -14,30 +14,32 @@ function useTime() {
 
   useEffect(() => {
     const fetchTime = async () => {
-      const request = await fetch("http://worldtimeapi.org/api/ip")
-      const response = await request.json()
+      const endpoint = `https://timezoneapi.io/api/ip/?token=${process.env.REACT_APP_TOKEN}`
+      const req = await fetch(endpoint)
+      const res = await req.json()
 
-      const {
-        datetime,
-        day_of_week,
-        day_of_year,
-        timezone,
-        week_number,
-        abbreviation,
-      } = response
+      if (res.meta.code === "200") {
+        const {
+          date_time,
+          offset_tzab, // timezone abbr
+          offset_tzid, // region and city
+          day,
+          date,
+          day_abbr,
+        } = res.data.datetime
 
-      setTime(dayjs(datetime).format("HH:mm"))
-      setTimezoneAbbreviation(abbreviation)
-      setDayOfWeek(day_of_week)
-      setDayOfYear(day_of_year)
-      setTimezone(timezone)
-      setWeekNumber(week_number)
+        setTime(dayjs(date_time).format("HH:mm"))
+        setTimezoneAbbreviation(offset_tzab)
+        setTimezone(offset_tzid)
+        setDayOfWeek(day)
+        setDayOfYear(date)
+        setWeekNumber(day_abbr)
 
-      if (time) {
-        const hour = Number(time[0] + time[1])
-
-        if (hour >= 12 && hour <= 19) {
-          setIsMorningOrAfternoon(true)
+        if (time) {
+          const hour = Number(time[0] + time[1])
+          if (hour >= 12 && hour <= 19) {
+            setIsMorningOrAfternoon(true)
+          }
         }
       }
     }
