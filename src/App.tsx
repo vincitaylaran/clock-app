@@ -6,8 +6,11 @@ import MorePanel from "components/MorePanel"
 
 import "styles/_base.scss"
 
+import useTime from "hooks/useTime"
+
 function App() {
   const [isMoreClicked, setIsMoreClicked] = useState<boolean>(false)
+  const { isMorningOrAfternoon } = useTime()
 
   const onMore = () => {
     setIsMoreClicked(isMoreClicked ? false : true)

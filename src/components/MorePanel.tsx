@@ -80,15 +80,7 @@ function Panel({
  */
 
 function MorePanel({ isMoreClicked }: IMorePanel) {
-  const {
-    timezone,
-    dayOfWeek,
-    dayOfYear,
-    weekNumber,
-    isMorningOrAfternoon,
-  } = useTime()
-
-  console.log(isMorningOrAfternoon)
+  const { timezone, dayOfWeek, dayOfYear, weekNumber } = useTime()
 
   return timezone && dayOfWeek && dayOfYear && weekNumber ? (
     <Panel isMoreClicked={isMoreClicked}>

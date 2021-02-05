@@ -1,26 +1,26 @@
 @import "./viewport-breakpoints";
 
-.header {
+.desktop-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/desktop/bg-image-daytime.jpg");
+}
+
+.tablet-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../assets/tablet/bg-image-daytime.jpg");
+}
 
+.mobile-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/mobile/bg-image-daytime.jpg");
+}
+
+.header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 20px 15px;
   z-index: -1;
-
-  @media all and (min-width: $breakpoint-laptop) {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("../assets/desktop/bg-image-daytime.jpg");
-    background-size: cover;
-  }
-
-  @media all and (max-width: $breakpoint-mobile) {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("../assets/mobile/bg-image-daytime.jpg");
-    background-size: cover;
-  }
 }
 
 .height-100vh {
