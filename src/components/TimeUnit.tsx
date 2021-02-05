@@ -1,10 +1,4 @@
-import React from "react"
 import useTime from "hooks/useTime"
-
-interface Props {
-  time: string | undefined
-  abbreviation: string | undefined
-}
 
 function TimeUnit() {
   const { time, timezoneAbbreviation } = useTime()

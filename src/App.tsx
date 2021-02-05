@@ -10,7 +10,6 @@ import useTime from "hooks/useTime"
 
 function App() {
   const [isMoreClicked, setIsMoreClicked] = useState<boolean>(false)
-  const { isMorningOrAfternoon } = useTime()
 
   const onMore = () => {
     setIsMoreClicked(isMoreClicked ? false : true)
@@ -25,13 +24,5 @@ function App() {
     </div>
   )
 }
-
-/**
- <Header>
-    <QuoteAndTime />
-    <ExpandButton />
-  </Header>
-    <MoreInfo />
- */
 
 export default App
