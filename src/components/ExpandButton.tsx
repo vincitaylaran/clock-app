@@ -8,13 +8,13 @@ interface Props {
 function ArrowIcon({ isMoreClicked }: { isMoreClicked: boolean }) {
   return (
     <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" fill-rule="evenodd">
+      <g fill="none" fillRule="evenodd">
         <circle id="circle-icon" fill="#303030" cx="20" cy="20" r="17" />
         <path
           className={`${isMoreClicked ? "" : "flipped"}`}
           id="arrow-icon"
           stroke="#FFF"
-          stroke-width="2"
+          strokeWidth="2"
           d="M14 23l6-6 6 6"
         />
       </g>
