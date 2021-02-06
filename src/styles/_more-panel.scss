@@ -1,12 +1,5 @@
 @import "./viewport-breakpoints";
 
-.background-light {
-}
-
-.background-dark {
-  opacity: 0.75;
-}
-
 .more-panel {
   height: 0;
   backdrop-filter: blur(5px);
@@ -14,7 +7,7 @@
   z-index: 1;
   width: 100%;
   position: absolute;
-  top: 54.6%;
+  top: 50%;
 
   transform-origin: 0 100%;
   transition: transform 400ms;
