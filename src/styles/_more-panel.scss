@@ -8,6 +8,7 @@
   width: 100%;
   position: absolute;
   top: 50%;
+  overflow: hidden;
 
   transform-origin: 0 100%;
   transition: transform 400ms;
@@ -19,6 +20,10 @@
   justify-content: center;
   align-content: center;
   box-sizing: border-box;
+
+  @media all and (max-width: $breakpoint-mobile) {
+    top: 55%;
+  }
 
   &__container {
     width: 100%;
