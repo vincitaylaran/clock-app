@@ -22,7 +22,7 @@ function Time({ onMore, isMoreClicked }: Props) {
 
   return (
     <div className="main">
-      {time && regionCode && city ? (
+      {time && regionCode && city && (
         <React.Fragment>
           <div className="main__quote">
             <Quote isMoreClicked={isMoreClicked} />
@@ -42,8 +42,6 @@ function Time({ onMore, isMoreClicked }: Props) {
             </div>
           </div>
         </React.Fragment>
-      ) : (
-        <h1>Loading...</h1> // TODO: replace with spinner
       )}
     </div>
   )
