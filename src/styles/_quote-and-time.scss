@@ -32,6 +32,7 @@ $time-location-more-button-relative-position-top: 10%;
           font-weight: var(--regular);
           margin: 0px;
           animation: fade-in-top ease 0.4s forwards;
+          color: #ffffffc7;
           @media all and (max-width: $breakpoint-tablet) {
             font-size: 15px;
           }
