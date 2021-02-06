@@ -34,14 +34,14 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 20px 15px;
+  padding: 1rem;
   z-index: -1;
 }
 
 .height-100vh {
-  min-height: 100vh;
+  min-height: calc(100vh - 2rem);
 }
 
 .height-50vh {
-  min-height: 50vh;
+  min-height: calc(50vh - 2rem);
 }
