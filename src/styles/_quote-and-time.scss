@@ -1,4 +1,5 @@
-@import "./viewport-breakpoints";
+// @import "./viewport-breakpoints";
+@import "./variables";
 @import "./animations";
 
 $time-location-more-button-relative-position-top: 10%;
@@ -9,7 +10,7 @@ $time-location-more-button-relative-position-top: 10%;
   box-sizing: border-box;
   // padding-left: 20px;
 
-  @media all and (min-width: $breakpoint-tablet) {
+  @media all and (min-width: map-get($breakpoints, tablet)) {
     padding-left: 70px;
   }
 
@@ -20,7 +21,7 @@ $time-location-more-button-relative-position-top: 10%;
     &__content-and-author {
       #author {
         animation: fade-in-top ease 0.4s forwards;
-        @media all and (max-width: $breakpoint-tablet) {
+        @media all and (max-width: map-get($breakpoints, tablet)) {
           font-size: 16px;
         }
       }
@@ -33,7 +34,7 @@ $time-location-more-button-relative-position-top: 10%;
           margin: 0px;
           animation: fade-in-top ease 0.4s forwards;
           color: #ffffffc7;
-          @media all and (max-width: $breakpoint-tablet) {
+          @media all and (max-width: map-get($breakpoints, tablet)) {
             font-size: 15px;
           }
         }
@@ -64,7 +65,7 @@ $time-location-more-button-relative-position-top: 10%;
   &__time-container {
     position: absolute;
     top: 58%;
-    @media all and (min-width: $breakpoint-tablet) {
+    @media all and (min-width: map-get($breakpoints, tablet)) {
       width: 90%;
     }
   }
@@ -85,7 +86,7 @@ $time-location-more-button-relative-position-top: 10%;
         letter-spacing: 0;
       }
 
-      @media all and (max-width: $breakpoint-tablet) {
+      @media all and (max-width: map-get($breakpoints, tablet)) {
         h1 {
           font-size: 170px;
         }
@@ -94,7 +95,7 @@ $time-location-more-button-relative-position-top: 10%;
         }
       }
 
-      @media all and (max-width: $breakpoint-mobile) {
+      @media all and (max-width: map-get($breakpoints, mobile)) {
         h1 {
           font-size: 100px;
         }
@@ -124,17 +125,17 @@ $time-location-more-button-relative-position-top: 10%;
         margin: 0;
         letter-spacing: 3.6px;
 
-        @media all and (max-width: $breakpoint-tablet) {
+        @media all and (max-width: map-get($breakpoints, tablet)) {
           font-size: 18px;
         }
 
-        @media all and (max-width: $breakpoint-mobile) {
+        @media all and (max-width: map-get($breakpoints, mobile)) {
           font-size: 15px;
         }
       }
 
       span#itsCurrently {
-        @media all and (max-width: $breakpoint-mobile) {
+        @media all and (max-width: map-get($breakpoints, mobile)) {
           display: none;
         }
       }
@@ -158,12 +159,12 @@ $time-location-more-button-relative-position-top: 10%;
       font-weight: var(--regular);
     }
 
-    @media all and (min-width: $breakpoint-laptop) {
+    @media all and (min-width: map-get($breakpoints, laptop)) {
       flex-direction: row;
       align-items: center;
     }
 
-    @media all and (max-width: $breakpoint-tablet) {
+    @media all and (max-width: map-get($breakpoints, tablet)) {
       padding-right: 0;
       h3 {
         font-size: 18px;
