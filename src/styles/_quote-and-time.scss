@@ -30,7 +30,7 @@ $time-location-more-button-relative-position-top: 10%;
         display: flex;
         justify-content: space-between;
         #content {
-          font-weight: var(--regular);
+          font-weight: map-get($font-weights, regular);
           margin: 0px;
           animation: fade-in-top ease 0.4s forwards;
           color: #ffffffc7;
@@ -82,7 +82,7 @@ $time-location-more-button-relative-position-top: 10%;
 
       h3 {
         display: inline;
-        font-weight: var(--light);
+        font-weight: map-get($font-weights, light);
         letter-spacing: 0;
       }
 
@@ -120,7 +120,7 @@ $time-location-more-button-relative-position-top: 10%;
 
       h3 {
         display: inline;
-        font-weight: var(--light);
+        font-weight: map-get($font-weights, light);
         font-size: 25px;
         margin: 0;
         letter-spacing: 3.6px;
@@ -156,7 +156,7 @@ $time-location-more-button-relative-position-top: 10%;
     // background: red;
 
     h3 {
-      font-weight: var(--regular);
+      font-weight: map-get($font-weights, regular);
     }
 
     @media all and (min-width: map-get($breakpoints, laptop)) {

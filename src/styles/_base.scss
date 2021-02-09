@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
 :root {
   font-family: "Inter", sans-serif;
-  --regular: 400;
-  --bold: 700;
-  --light: 300;
 
   --black-1: #000000;
   --black-2: #303030;
@@ -11,12 +8,6 @@
   --green: #999999;
 
   --main-left-padding: 200px;
-
-  // Screen width breakpoints
-  --desktop-breakpoint: 1400px;
-  --laptop-breakpoint: 1000px;
-  --tablet-breakpoint: 756px;
-  --mobile-breakpoint: 450px;
 }
 
 html {
