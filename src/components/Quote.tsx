@@ -1,4 +1,4 @@
-import "styles/_quote-and-time.scss"
+import "styles/quote-and-time.scss"
 import useQuote from "hooks/useQuote"
 
 interface Props {

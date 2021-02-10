@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import "styles/_header.scss"
+import "styles/header.scss"
 import useBackgroundClass from "hooks/useBackgroundClass"
 
 interface Props {

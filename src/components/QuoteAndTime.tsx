@@ -1,6 +1,6 @@
 import React from "react"
 
-import "styles/_quote-and-time.scss"
+import "styles/quote-and-time.scss"
 
 import Greeting from "components/Greeting"
 import TimeUnit from "components/TimeUnit"

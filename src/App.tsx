@@ -4,7 +4,7 @@ import QuoteAndTime from "components/QuoteAndTime"
 import Header from "components/Header"
 import MorePanel from "components/MorePanel"
 
-import "styles/_base.scss"
+import "styles/base.scss"
 
 function App() {
   const [isMoreClicked, setIsMoreClicked] = useState<boolean>(false)

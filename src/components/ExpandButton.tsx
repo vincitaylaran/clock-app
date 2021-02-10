@@ -1,4 +1,4 @@
-import "styles/_expand-button.scss"
+import "styles/expand-button.scss"
 
 interface Props {
   onMore: (wasClicked: boolean) => void

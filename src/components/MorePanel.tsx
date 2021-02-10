@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react"
-import "styles/_more-panel.scss"
+import "styles/more-panel.scss"
 
 import useTime from "hooks/useTime"
 
