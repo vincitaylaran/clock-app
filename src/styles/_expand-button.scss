@@ -1,4 +1,4 @@
-@import "./viewport-breakpoints";
+@import "./variables";
 
 .more-button {
   display: flex;
@@ -24,7 +24,7 @@
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 3.75px;
-    font-weight: var(--bold);
+    font-weight: map-get($font-weights, bold);
   }
 
   #arrow-icon {
@@ -35,7 +35,7 @@
     transform-origin: 50% 50%;
   }
 
-  @media all and (min-width: $breakpoint-tablet) {
+  @media all and (min-width: map-get($breakpoints, tablet)) {
     cursor: pointer;
   }
 }
