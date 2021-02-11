@@ -1,13 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
 :root {
   font-family: "Inter", sans-serif;
-
-  --black-1: #000000;
-  --black-2: #303030;
-  --white-1: #ffffff;
-  --green: #999999;
-
-  --main-left-padding: 200px;
 }
 
 html {
@@ -23,8 +17,6 @@ body {
 }
 
 h1 {
-  // line-height: 200px;
-  // letter-spacing: -5px;
   font-size: 200px;
 }
 
@@ -34,25 +26,21 @@ h2 {
 
 h3 {
   font-size: 28px;
-  // line-height: 28px;
   letter-spacing: 4.8px;
   text-transform: uppercase;
 }
 
 h4 {
   font-size: 20px;
-  // line-height: 28px;
   letter-spacing: 1.3px;
 }
 
 h5 {
   font-size: 18px;
   line-height: 28px;
-  // letter-spacing: 1.2px;
 }
 
 h6 {
   font-size: 15px;
-  // line-height: 28px;
   letter-spacing: 3px;
 }

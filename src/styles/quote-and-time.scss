@@ -1,14 +1,14 @@
-// @import "./viewport-breakpoints";
 @import "./variables";
 @import "./animations";
+@import "./mixins";
+@import "./functions";
 
 .main {
   color: white;
   min-width: 100%;
   box-sizing: border-box;
-  // padding-left: 20px;
 
-  @media all and (min-width: map-get($breakpoints, tablet)) {
+  @include tablet($max-width: false) {
     padding-left: 70px;
   }
 
@@ -19,7 +19,7 @@
     &__content-and-author {
       #author {
         animation: fade-in-top ease 0.4s forwards;
-        @media all and (max-width: map-get($breakpoints, tablet)) {
+        @include tablet($max-width: true) {
           font-size: 16px;
         }
       }
@@ -28,11 +28,11 @@
         display: flex;
         justify-content: space-between;
         #content {
-          font-weight: map-get($font-weights, regular);
+          font-weight: fontWeight(regular);
           margin: 0px;
           animation: fade-in-top ease 0.4s forwards;
           color: #ffffffc7;
-          @media all and (max-width: map-get($breakpoints, tablet)) {
+          @include tablet($max-width: true) {
             font-size: 15px;
           }
         }
@@ -63,7 +63,7 @@
   &__time-container {
     position: absolute;
     top: 58%;
-    @media all and (min-width: map-get($breakpoints, tablet)) {
+    @include tablet($max-width: false) {
       width: 90%;
     }
   }
@@ -80,11 +80,11 @@
 
       h3 {
         display: inline;
-        font-weight: map-get($font-weights, light);
+        font-weight: fontWeight(light);
         letter-spacing: 0;
       }
 
-      @media all and (max-width: map-get($breakpoints, tablet)) {
+      @include tablet($max-width: true) {
         h1 {
           font-size: 170px;
         }
@@ -93,7 +93,7 @@
         }
       }
 
-      @media all and (max-width: map-get($breakpoints, mobile)) {
+      @include mobile($max-width: true) {
         h1 {
           font-size: 100px;
         }
@@ -118,28 +118,25 @@
 
       h3 {
         display: inline;
-        font-weight: map-get($font-weights, light);
+        font-weight: fontWeight(light);
         font-size: 25px;
         margin: 0;
         letter-spacing: 3.6px;
 
-        @media all and (max-width: map-get($breakpoints, tablet)) {
+        @include tablet($max-width: true) {
           font-size: 18px;
         }
 
-        @media all and (max-width: map-get($breakpoints, mobile)) {
+        @include mobile($max-width: true) {
           font-size: 15px;
         }
       }
 
       span#itsCurrently {
-        @media all and (max-width: map-get($breakpoints, mobile)) {
+        @include mobile($max-width: true) {
           display: none;
         }
       }
-    }
-
-    &__no-greeting {
     }
   }
 
@@ -154,7 +151,7 @@
     // background: red;
 
     h3 {
-      font-weight: map-get($font-weights, regular);
+      font-weight: fontWeight(regular);
     }
 
     @media all and (min-width: map-get($breakpoints, laptop)) {
