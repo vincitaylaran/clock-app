@@ -8,20 +8,11 @@ function useBackgroundClass() {
   const { isMorningOrAfternoon } = useTime()
 
   if (desktopBreakpoint) {
-    if (isMorningOrAfternoon) {
-      return "desktop-bg-light"
-    }
-    return "desktop-bg-dark"
+    return `desktop-bg${isMorningOrAfternoon ? "-light" : "-dark"}`
   } else if (tabletBreakpoint) {
-    if (isMorningOrAfternoon) {
-      return "tablet-bg-light"
-    }
-    return "tablet-bg-dark"
+    return `tablet-bg${isMorningOrAfternoon ? "-light" : "-dark"}`
   } else {
-    if (isMorningOrAfternoon) {
-      return "mobile-bg-dark"
-    }
-    return "mobile-bg-light"
+    return `mobile-bg${isMorningOrAfternoon ? "-light" : "-dark"}`
   }
 }
 

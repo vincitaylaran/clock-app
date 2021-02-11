@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import "styles/header.scss"
+import "styles/background.scss"
 import useBackgroundClass from "hooks/useBackgroundClass"
 
 interface Props {
@@ -7,10 +7,10 @@ interface Props {
   isMoreClicked: boolean
 }
 
-function Header({ children }: Props) {
+function Background({ children }: Props) {
   const className = useBackgroundClass()
 
   return <div className={`${className} header height-100vh`}>{children}</div>
 }
 
-export default Header
+export default Background

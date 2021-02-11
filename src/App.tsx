@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import QuoteAndTime from "components/QuoteAndTime"
-import Header from "components/Header"
+import Background from "components/Background"
 import MorePanel from "components/MorePanel"
 
 import "styles/base.scss"
@@ -15,9 +15,9 @@ function App() {
 
   return (
     <div className="app">
-      <Header isMoreClicked={isMoreClicked}>
+      <Background isMoreClicked={isMoreClicked}>
         <QuoteAndTime onMore={onMore} isMoreClicked={isMoreClicked} />
-      </Header>
+      </Background>
       <MorePanel isMoreClicked={isMoreClicked} />
     </div>
   )
