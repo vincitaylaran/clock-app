@@ -1,0 +1,59 @@
+@import "./variables";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin position($type) {
+  position: $type;
+}
+
+// Pass in "false" if you want to use min-width instead of max-width
+@mixin tablet($max-width: true) {
+  @if $max-width {
+    @media (max-width: map-get($breakpoints, tablet)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: map-get($breakpoints, tablet)) {
+      @content;
+    }
+  }
+}
+
+@mixin mobile($max-width: true) {
+  @if $max-width {
+    @media (max-width: map-get($breakpoints, mobile)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: map-get($breakpoints, mobile)) {
+      @content;
+    }
+  }
+}
+
+@mixin desktop($max-width: true) {
+  @if $max-width {
+    @media (max-width: map-get($breakpoints, desktop)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: map-get($breakpoints, desktop)) {
+      @content;
+    }
+  }
+}
+
+@mixin laptop($max-width: true) {
+  @if $max-width {
+    @media (max-width: map-get($breakpoints, laptop)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: map-get($breakpoints, laptop)) {
+      @content;
+    }
+  }
+}
