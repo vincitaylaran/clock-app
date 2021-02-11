@@ -1,12 +1,13 @@
 @import "./variables";
+@import "./mixins";
 
 .more-button {
-  display: flex;
+  @include flexCenter;
+  align-items: center;
   width: 115px;
   height: 43px;
   border-radius: 35px;
   background-color: white;
-  align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
   padding-left: 13px;
@@ -25,9 +26,6 @@
     font-size: 14px;
     letter-spacing: 3.75px;
     font-weight: map-get($font-weights, bold);
-  }
-
-  #arrow-icon {
   }
 
   .flipped {

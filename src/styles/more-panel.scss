@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./mixins";
 
 .more-panel {
   height: 0;
@@ -6,7 +7,7 @@
 
   z-index: 1;
   width: 100%;
-  position: absolute;
+  @include position(absolute);
   top: 50%;
   overflow: hidden;
 
@@ -16,8 +17,7 @@
   transform: scaleY(0);
   transition-timing-function: ease-in;
 
-  display: flex;
-  justify-content: center;
+  @include flexCenter;
   align-content: center;
   box-sizing: border-box;
 
